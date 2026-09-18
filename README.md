@@ -40,27 +40,56 @@ adicione um botão `<button class="chip" data-mode="sua_chave">`.
 
 ## Rodando no seu computador
 
-1. Instale as dependências:
-   ```bash
+### Windows (CMD ou PowerShell)
+
+1. Abra o CMD na pasta do projeto:
+   ```cmd
+   cd caminho\para\projeto_RAOS
+   ```
+
+2. Instale as dependências:
+   ```cmd
    pip install -r requirements.txt
    ```
 
-2. Configure a chave do Gemini:
-   ```bash
-   cp .env.example .env
-   # edite o .env e cole sua chave (aistudio.google.com/app/apikey)
-   ```
-
 3. Rode o servidor:
-   ```bash
-   python backend/server.py
+   ```cmd
+   python backend\server.py
    ```
 
 4. Abra `http://localhost:5000` no navegador.
 
+### Mac/Linux
+
+```bash
+cd projeto_RAOS
+pip install -r requirements.txt
+python backend/server.py
+# abra http://localhost:5000
+```
+
 O `backend/server.py` já serve os arquivos de `frontend/` — não precisa
 abrir o `index.html` direto, precisa passar pelo servidor Flask, senão o
 chat não tem com quem falar.
+
+### Erros comuns no Windows
+
+**Erro: `ImportError: cannot import name 'genai' from 'google'`**
+
+Se aparecer esse erro, o pacote `google-genai` não está instalou corretamente.
+Tente:
+```cmd
+pip uninstall google google-genai
+pip install google-genai python-dotenv flask
+```
+
+Ou crie um ambiente virtual limpo:
+```cmd
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python backend\server.py
+```
 
 ## Publicando na web (Render, gratuito)
 
@@ -105,7 +134,7 @@ normal, não é erro. Pra sempre ficar ativo é preciso um plano pago.
 
 ## Notas
 
-- Modelo padrão: `gemini-2.0-flash` (troque com a variável `GEMINI_MODEL`).
+- Modelo padrão: `gemini-3.5-flash` (troque com a variável `GEMINI_MODEL`).
 - Se `GEMINI_API_KEY` não estiver definida, o `/api/chat` responde com
   erro 500 explicando o que falta — o resto do site carrega normalmente.
 - Nunca coloque sua chave de verdade dentro de `render.yaml` nem de
