@@ -1,0 +1,22 @@
+# render.yaml
+# ------------
+# "Blueprint" do Render: descreve o serviço pra plataforma configurar
+# tudo sozinha (New + Blueprint no painel do Render, apontando pra este
+# repositório). GEMINI_API_KEY fica marcada como "sync: false" de
+# propósito — o Render vai pedir pra você digitar o valor no painel em
+# vez de guardá-lo neste arquivo (que vai pro GitHub).
+
+services:
+  - type: web
+    name: uaifly
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn backend.server:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.0-flash

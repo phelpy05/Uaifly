@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uaifly — assistente de viagem</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-chat">
+
+<header class="topbar">
+  <a href="index.html" class="logo">
+    <img src="assets/logo.png" alt="Uaifly" class="mark">
+    <span class="logo-word"><span class="lw-1">Uai</span><span class="lw-2">fly</span></span>
+  </a>
+  <div class="topbar-actions">
+    <button class="new-chat-btn" id="newChatBtn" title="Nova conversa">+ Nova conversa</button>
+    <a href="index.html" class="home-link">Início</a>
+  </div>
+</header>
+
+<main class="app">
+
+  <!-- SIDEBAR: modos + sessoes + fuso -->
+  <aside class="sidebar">
+    <div class="sidebar-block">
+      <h2>Sessões anteriores</h2>
+      <div class="session-list" id="sessionList"></div>
+    </div>
+
+    <div class="sidebar-block">
+      <h2>O que você precisa?</h2>
+      <div class="chips" id="modeChips">
+        <button class="chip active" data-mode="geral">Conversa livre</button>
+        <button class="chip" data-mode="roteiro">Roteiro</button>
+        <button class="chip" data-mode="dicas">Dicas de viagem</button>
+        <button class="chip" data-mode="hoteis">Hotéis</button>
+        <button class="chip" data-mode="voos">Voos</button>
+        <button class="chip" data-mode="eventos">Eventos</button>
+        <button class="chip" data-mode="fuso_horario">Fuso-horário</button>
+        <button class="chip" data-mode="restaurante_tipico">Restaurante típico</button>
+        <button class="chip" data-mode="passeios">Passeios</button>
+        <button class="chip" data-mode="interprete_pessoal">Intérprete pessoal</button>
+        <button class="chip" data-mode="interprete_online">Intérprete online</button>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <h2>Fuso-horário agora</h2>
+      <div class="clock-list" id="clockList"></div>
+    </div>
+  </aside>
+
+  <!-- CHAT -->
+  <section class="chat-panel">
+    <div class="chat-log" id="chatLog"></div>
+
+    <form class="chat-input" id="chatForm">
+      <span class="active-mode" id="activeModeLabel">Conversa livre</span>
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ex: 5 dias em Lisboa em outubro, foco em comida e história"
+        autocomplete="off"
+      >
+      <button type="submit" id="sendBtn" disabled>Enviar</button>
+    </form>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

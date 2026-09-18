@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uaifly — sua viagem, planejada por IA</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-home">
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <img class="mark" src="assets/logo.png" alt="">
+      <span class="logo-word"><span class="lw-1">Uai</span><span class="lw-2">fly</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#recursos">Recursos</a>
+      <a href="#assistente">Assistente</a>
+      <a href="#como-funciona">Como funciona</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost">Entrar</a>
+      <a href="chat.html" class="btn btn-primary">Planejar viagem</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top" style="padding-top:70px;">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="pill"><span class="dot"></span> IA de viagem, ponta a ponta</div>
+        <h1>Sua próxima viagem já está sendo planejada.</h1>
+        <p class="lede">O uaifly organiza roteiro, hospedagem, voos e restaurantes numa conversa só — e avisa o fuso-horário do destino antes que você pergunte.</p>
+        <div class="hero-actions">
+          <a href="chat.html" class="btn btn-primary">Começar a planejar</a>
+          <a href="#assistente" class="btn btn-outline">Ver o assistente</a>
+        </div>
+      </div>
+
+      <div class="stack" aria-hidden="true">
+        <div class="stack-card c1">
+          <div class="k">Roteiro · Lisboa</div>
+          <div class="v">5 dias montados</div>
+          <div class="sub">Ajustado agora há pouco</div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="stack-card c2">
+          <div class="k">Voo LA3450</div>
+          <div class="v">Embarque 14:35</div>
+          <div class="sub">No horário</div>
+        </div>
+        <div class="stack-card c3">
+          <div class="k">Fuso-horário</div>
+          <div class="v">17:52 em Lisboa</div>
+          <div class="sub">+4h em relação a você</div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none">
+      <path fill="#170f38" d="M0 90 L0 40 C 240 90, 480 0, 720 40 C 960 80, 1200 10, 1440 45 L1440 90 Z"/>
+    </svg>
+  </section>
+
+  <!-- FEATURES BENTO -->
+  <section id="recursos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Recursos</span>
+        <h2>Cada parte da viagem, resolvida por IA</h2>
+        <p>Do roteiro ao intérprete no destino — o uaifly acompanha a viagem inteira, não só a reserva.</p>
+      </div>
+
+      <div class="bento">
+
+        <div class="bcard dark span2">
+          <span class="emoji-icon">🗺️</span>
+          <div>
+            <h3>Planejamento de roteiros</h3>
+            <p>Monta um roteiro dia a dia a partir do destino, do tempo disponível e do que você curte fazer.</p>
+          </div>
+        </div>
+
+        <div class="bcard light">
+          <span class="emoji-icon">🌍</span>
+          <div><h3>Dicas de viagem</h3><p>Documentação, clima e costumes locais, direto ao ponto.</p></div>
+        </div>
+
+        <div class="bcard light rowspan2">
+          <span class="emoji-icon">✈️</span>
+          <div>
+            <h3>Voos monitorados</h3>
+            <p>Status de embarque, atrasos e cancelamentos em tempo real.</p>
+            <div class="bar" style="background:rgba(241,238,251,0.14);"><i style="background:var(--cyan);width:80%;"></i></div>
+          </div>
+        </div>
+
+        <div class="bcard light">
+          <span class="emoji-icon">🏨</span>
+          <div><h3>Melhores hotéis</h3><p>Localização, preço e avaliações comparados por você.</p></div>
+        </div>
+
+        <div class="bcard dark">
+          <span class="emoji-icon">🕐</span>
+          <div>
+            <h3>Fuso-horário</h3>
+            <div class="mini-clock">
+              <div class="mc">SP<br><b id="clkSP">--:--</b></div>
+              <div class="mc">Lisboa<br><b id="clkLIS">--:--</b></div>
+              <div class="mc">Tóquio<br><b id="clkTYO">--:--</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bcard light">
+          <span class="emoji-icon">🎭</span>
+          <div><h3>Eventos locais</h3><p>Shows e festivais que caem nas suas datas de viagem.</p></div>
+        </div>
+
+        <div class="bcard light">
+          <span class="emoji-icon">🗣️</span>
+          <div><h3>Intérpretes multilíngues</h3><p>Profissionais avaliados por idioma e cidade.</p></div>
+        </div>
+
+        <div class="bcard dark">
+          <span class="emoji-icon">🍽️</span>
+          <div><h3>Melhores restaurantes</h3><p>Por tipo de cozinha, com os pratos que valem a visita.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APP / CHAT -->
+  <section class="app-section" id="assistente">
+    <div class="wrap app-grid">
+      <div>
+        <span class="kicker">O assistente</span>
+        <div class="section-head" style="margin-bottom:0;">
+          <h2>Uma conversa organiza a viagem inteira</h2>
+          <p>Diga o que você quer e o uaifly cuida da logística — e reorganiza tudo se algo mudar no caminho.</p>
+        </div>
+        <ul class="app-feature-list">
+          <li><span class="num">1</span><div><strong>Entende o que você quer</strong><span>Orçamento, ritmo e o tipo de viagem que combina com você.</span></div></li>
+          <li><span class="num">2</span><div><strong>Reage a imprevistos</strong><span>Voo atrasado ou evento cancelado — ela ajusta o plano na hora.</span></div></li>
+          <li><span class="num">3</span><div><strong>Fala a língua do lugar</strong><span>Indica intérprete quando o tradutor do celular não resolve.</span></div></li>
+        </ul>
+      </div>
+
+      <div class="phone">
+        <div class="phone-top"><span class="dot"></span> uaifly · assistente</div>
+        <div class="phone-bubble user">5 dias em Lisboa em outubro, comida e história, orçamento médio.</div>
+        <div class="phone-bubble ai"><span class="t">Roteiro</span>Dia 1 — Alfama e Castelo de São Jorge. Hospedagem reservada no Chiado, 12 min a pé do centro.</div>
+        <div class="phone-bubble ai"><span class="t">Fuso-horário</span>Lisboa está 4h à frente de São Paulo — seu voo chega às 8h locais.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Como funciona</span>
+        <h2>Da ideia ao check-in</h2>
+      </div>
+      <div class="timeline">
+        <div class="t-item">
+          <h3>Diga onde e como</h3>
+          <p>Destino, datas e o tipo de viagem — relaxar, explorar ou comer bem.</p>
+        </div>
+        <div class="t-item">
+          <h3>O uaifly monta o plano</h3>
+          <p>Roteiro, hospedagem, restaurantes e eventos organizados por dia.</p>
+        </div>
+        <div class="t-item">
+          <h3>Ele ajusta com você lá</h3>
+          <p>Mudou o plano? O uaifly reorganiza tudo na hora, sem drama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" id="comecar">
+    <div class="wrap">
+      <h2>Pronto pra deixar a IA cuidar dos detalhes?</h2>
+      <a href="chat.html" class="btn btn-primary" style="background:linear-gradient(135deg,#ffffff,#a87bee);color:var(--blue-950);">Planejar minha primeira viagem</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo">
+          <img class="mark" src="assets/logo.png" alt="">
+          <span class="logo-word"><span class="lw-1">Uai</span><span class="lw-2">fly</span></span>
+        </a>
+        <p class="foot-desc">Um assistente de viagem que planeja, acompanha e ajusta o roteiro junto com você.</p>
+      </div>
+      <div><h4>Recursos</h4><ul><li><a href="#recursos">Roteiros</a></li><li><a href="#recursos">Hotéis</a></li><li><a href="#recursos">Voos</a></li><li><a href="#recursos">Restaurantes</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="#">Sobre</a></li><li><a href="#">Como funciona</a></li><li><a href="#">Contato</a></li></ul></div>
+      <div><h4>Suporte</h4><ul><li><a href="#">Central de ajuda</a></li><li><a href="#">Intérpretes parceiros</a></li><li><a href="#">Privacidade</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 uaifly. Todos os direitos reservados.</span>
+      <span>Feito para quem viaja sem querer perder tempo com logística.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
